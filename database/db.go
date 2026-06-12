@@ -171,7 +171,7 @@ func (db *DB) CheckRateLimit(phoneNumber string) (bool, error) {
 	WHERE phone_number = ?
 	`, phoneNumber).Scan(&rateLimit)
 	if err == sql.ErrNoRows {
-		// Phone number not in database, use default limit of 5
+		// Номер телефона отсутствует в базе данных, используется лимит по умолчанию 5
 		rateLimit = 5
 	} else if err != nil {
 		return false, err
@@ -213,5 +213,8 @@ func (db *DB) cleanupExpiredRateLimitEntries() error {
 func (db *DB) PurgeOldMessageData() error {
 	// Delete any entries older than 24 hours (failsafe in case expiry index isn't working)
 	_, err := db.Exec(`DELETE FROM message_rate_limit WHERE sent_at < datetime('now', '-24 hours')`)
+	return err
+}
+)
 	return err
 }

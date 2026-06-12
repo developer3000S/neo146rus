@@ -33,16 +33,14 @@ func main() {
 	// Initialize config
 	cfg, err := config.NewConfig()
 	if err != nil {
-		fmt.Printf("Ошибка инициализации конфигурации: %v
-", err)
+		fmt.Printf("Ошибка инициализации конфигурации: %v\n", err)
 		os.Exit(1)
 	}
 
 	// Initialize database
 	db, err := database.InitDB()
 	if err != nil {
-		fmt.Printf("Ошибка инициализации базы данных: %v
-", err)
+		fmt.Printf("Ошибка инициализации базы данных: %v\n", err)
 		os.Exit(1)
 	}
 	defer db.Close()
@@ -161,7 +159,7 @@ func startPrivacyCleanupJob(db *database.DB) {
 
 	for range ticker.C {
 		if err := db.PurgeOldMessageData(); err != nil {
-			log.Printf("Ошибка очистки старых данных сообщений: %v", err)
+			log.Printf("Ошибка при очистке старых данных сообщений: %v", err)
 		}
 	}
 }

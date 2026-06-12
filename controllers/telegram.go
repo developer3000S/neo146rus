@@ -26,7 +26,7 @@ func NewTelegramController(
 	// Create Telegram service
 	telegramService, err := services.NewTelegramService(token, smsService, subService)
 	if err != nil {
-		return nil, fmt.Errorf("error creating Telegram service: %v", err)
+		return nil, fmt.Errorf("ошибка при создании службы Telegram: %v", err)
 	}
 
 	return &TelegramController{
@@ -44,5 +44,8 @@ func (c *TelegramController) StartBot() error {
 func (c *TelegramController) Cleanup() {
 	if c.TelegramService != nil {
 		c.TelegramService.Cleanup()
+	}
+}
+p()
 	}
 }

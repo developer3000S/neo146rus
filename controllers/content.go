@@ -76,7 +76,7 @@ func (c *ContentController) HandleTwitter(ctx *fiber.Ctx) error {
 func (c *ContentController) HandleDuckDuckGo(ctx *fiber.Ctx) error {
 	query := ctx.Query("q")
 	if query == "" {
-		return ctx.Status(400).SendString("Missing q parameter")
+		return ctx.Status(400).SendString("Отсутствует параметр q")
 	}
 
 	results, err := c.searchService.FetchDuckDuckGoResults(query)
@@ -97,7 +97,7 @@ func (c *ContentController) HandleDuckDuckGo(ctx *fiber.Ctx) error {
 func (c *ContentController) HandleWikipedia(ctx *fiber.Ctx) error {
 	query := ctx.Query("q")
 	if query == "" {
-		return ctx.Status(400).SendString("Missing q parameter")
+		return ctx.Status(400).SendString("Отсутствует параметр q")
 	}
 
 	langCode := ctx.Query("lang")
@@ -128,9 +128,11 @@ func (c *ContentController) HandleWeather(ctx *fiber.Ctx) error {
 
 	forecast, err := c.weatherService.FetchWeatherForecast(location)
 	if err != nil {
-		return ctx.Status(500).SendString("Error fetching weather forecast: " + err.Error())
+		return ctx.Status(500).SendString("Ошибка при получении прогноза погоды: " + err.Error())
 	}
 
 	// Weather is sent as is, without base64 encoding
 	return ctx.SendString(forecast)
+}
+forecast)
 }

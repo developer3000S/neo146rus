@@ -110,7 +110,7 @@ func (c *WebhookController) HandlePayPal(ctx *fiber.Ctx) error {
 
 	// Verify the IPN with PayPal
 	if err := utils.VerifyPayPalIPN(body); err != nil {
-		return ctx.Status(400).SendString("Invalid IPN")
+		return ctx.Status(400).SendString("Недействительный IPN")
 	}
 
 	// Handle different IPN types
@@ -146,5 +146,8 @@ func (c *WebhookController) HandlePayPal(ctx *fiber.Ctx) error {
 	}
 
 	// Send success response back to PayPal
+	return ctx.SendString("OK")
+}
+ck to PayPal
 	return ctx.SendString("OK")
 }

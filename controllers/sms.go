@@ -54,7 +54,7 @@ func NewSMSController(
 func (c *SMSController) HandleTest(ctx *fiber.Ctx) error {
 	// Deny access in production
 	if c.config.Environment == "prod" {
-		return ctx.Status(403).SendString("Test endpoint is not available in production environment")
+		return ctx.Status(403).SendString("Тестовая конечная точка недоступна в производственной среде")
 	}
 
 	var payload []models.SMSPayload
@@ -358,7 +358,7 @@ func (c *SMSController) HandleInbound(ctx *fiber.Ctx) error {
 func (c *SMSController) HandleTestSubscribe(ctx *fiber.Ctx) error {
 	// Deny access in production
 	if c.config.Environment == "prod" {
-		return ctx.Status(403).SendString("Test endpoint is not available in production environment")
+		return ctx.Status(403).SendString("Тестовая конечная точка недоступна в производственной среде")
 	}
 
 	type SubscriptionRequest struct {
@@ -384,5 +384,15 @@ func (c *SMSController) HandleTestSubscribe(ctx *fiber.Ctx) error {
 		return ctx.Status(500).SendString(fmt.Sprintf("Error saving subscription: %v", err))
 	}
 
-	return ctx.SendString("Subscription added successfully")
+	return ctx.SendString("Подписка успешно добавлена")
+}
+y")
+}
+fully")
+}
+dString("Subscription added successfully")
+}
+y")
+}
+)
 }
