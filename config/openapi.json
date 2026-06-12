@@ -1,8 +1,8 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "neo146 HTTP API",
-    "description": "neo146 provides a minimal HTTP-SMS gateway that serves as an emergency network connection method inspired by dial-up, allowing you to access content via SMS.",
+    "title": "HTTP API neo146",
+    "description": "neo146 предоставляет минимальный HTTP-SMS шлюз, который служит методом экстренного сетевого подключения, вдохновленным dial-up, позволяя получать доступ к контенту через SMS.",
     "version": "1.0.0",
     "contact": {
       "email": "neo146@riseup.net"
@@ -11,21 +11,21 @@
   "servers": [
     {
       "url": "https://neo146.net",
-      "description": "Production server"
+      "description": "Продакшн-сервер"
     },
     {
       "url": "http://localhost:8080",
-      "description": "Development server"
+      "description": "Сервер разработки"
     }
   ],
   "paths": {
     "/": {
       "get": {
-        "summary": "Service documentation",
-        "description": "Returns basic documentation about the neo146 service",
+        "summary": "Документация сервиса",
+        "description": "Возвращает основную документацию о сервисе neo146",
         "responses": {
           "200": {
-            "description": "Documentation text",
+            "description": "Текст документации",
             "content": {
               "text/plain": {
                 "schema": {
@@ -39,8 +39,8 @@
     },
     "/uri2md": {
       "get": {
-        "summary": "Convert URI to Markdown",
-        "description": "Fetches the content at the given URI and converts it to Markdown format",
+        "summary": "Преобразовать URI в Markdown",
+        "description": "Получает содержимое по указанному URI и преобразует его в формат Markdown",
         "parameters": [
           {
             "in": "query",
@@ -49,7 +49,7 @@
             "schema": {
               "type": "string"
             },
-            "description": "URI to fetch and convert to Markdown"
+            "description": "URI для получения и преобразования в Markdown"
           },
           {
             "in": "query",
@@ -58,12 +58,12 @@
             "schema": {
               "type": "boolean"
             },
-            "description": "Whether to base64 encode the response"
+            "description": "Нужно ли кодировать ответ в base64"
           }
         ],
         "responses": {
           "200": {
-            "description": "Markdown content",
+            "description": "Содержимое Markdown",
             "content": {
               "text/plain": {
                 "schema": {
@@ -73,7 +73,7 @@
             }
           },
           "400": {
-            "description": "Bad request - missing parameter",
+            "description": "Неверный запрос — отсутствует параметр",
             "content": {
               "text/plain": {
                 "schema": {
@@ -83,7 +83,7 @@
             }
           },
           "500": {
-            "description": "Server error",
+            "description": "Ошибка сервера",
             "content": {
               "text/plain": {
                 "schema": {
@@ -97,8 +97,8 @@
     },
     "/twitter": {
       "get": {
-        "summary": "Get tweets from user",
-        "description": "Fetches the last 5 tweets from a Twitter user",
+        "summary": "Получить твиты пользователя",
+        "description": "Получает последние 5 твитов пользователя Twitter",
         "parameters": [
           {
             "in": "query",
@@ -107,7 +107,7 @@
             "schema": {
               "type": "string"
             },
-            "description": "Twitter username"
+            "description": "Имя пользователя Twitter"
           },
           {
             "in": "query",
@@ -116,12 +116,12 @@
             "schema": {
               "type": "boolean"
             },
-            "description": "Whether to base64 encode the response"
+            "description": "Нужно ли кодировать ответ в base64"
           }
         ],
         "responses": {
           "200": {
-            "description": "Tweets content",
+            "description": "Содержимое твитов",
             "content": {
               "text/plain": {
                 "schema": {
@@ -131,7 +131,7 @@
             }
           },
           "400": {
-            "description": "Bad request - missing parameter",
+            "description": "Неверный запрос — отсутствует параметр",
             "content": {
               "text/plain": {
                 "schema": {
@@ -141,7 +141,7 @@
             }
           },
           "500": {
-            "description": "Server error",
+            "description": "Ошибка сервера",
             "content": {
               "text/plain": {
                 "schema": {
@@ -155,8 +155,8 @@
     },
     "/ddg": {
       "get": {
-        "summary": "Search with DuckDuckGo",
-        "description": "Search the web using DuckDuckGo",
+        "summary": "Поиск в DuckDuckGo",
+        "description": "Поиск в вебе с помощью DuckDuckGo",
         "parameters": [
           {
             "in": "query",
@@ -165,7 +165,7 @@
             "schema": {
               "type": "string"
             },
-            "description": "Search query"
+            "description": "Поисковый запрос"
           },
           {
             "in": "query",
@@ -174,12 +174,12 @@
             "schema": {
               "type": "boolean"
             },
-            "description": "Whether to base64 encode the response"
+            "description": "Нужно ли кодировать ответ в base64"
           }
         ],
         "responses": {
           "200": {
-            "description": "Search results",
+            "description": "Результаты поиска",
             "content": {
               "text/plain": {
                 "schema": {
@@ -189,7 +189,7 @@
             }
           },
           "400": {
-            "description": "Bad request - missing parameter",
+            "description": "Неверный запрос — отсутствует параметр",
             "content": {
               "text/plain": {
                 "schema": {
@@ -199,7 +199,7 @@
             }
           },
           "500": {
-            "description": "Server error",
+            "description": "Ошибка сервера",
             "content": {
               "text/plain": {
                 "schema": {
@@ -212,4 +212,4 @@
       }
     }
   }
-} 
+}

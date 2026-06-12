@@ -1,36 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="neo146 - A minimal emergency gateway service providing SMS and Markdown access to internet content">
-    <title>neo146 - connect like it's 1984</title>
+    <meta name="description" content="neo146 — минималистичный аварийный шлюз, обеспечивающий доступ к интернет-контенту через SMS и Markdown">
+    <title>neo146 — подключайся как в 1984</title>
     <meta name="fediverse:creator" content="@neo146@chaos.social">
     <meta name="fediverse:domain" content="chaos.social">
     <meta name="fediverse:type" content="service">
     <meta name="fediverse:name" content="neo146">
     <meta name="fediverse:shortname" content="neo146">
-    <meta name="fediverse:description" content="neo146 - A minimal emergency gateway service providing SMS and Markdown access to internet content">
+    <meta name="fediverse:description" content="neo146 — минималистичный аварийный шлюз, обеспечивающий доступ к интернет-контенту через SMS и Markdown">
     <meta name="fediverse:url" content="https://neo146.net">
     <meta name="fediverse:category" content="gateway">
     <meta name="fediverse:category" content="sms">
 
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@neo146net">
-    <meta name="twitter:title" content="neo146 - connect like it's 1984">
-    <meta name="twitter:description" content="neo146 - A minimal emergency gateway service providing SMS and Markdown access to internet content">
+    <meta name="twitter:title" content="neo146 — подключайся как в 1984">
+    <meta name="twitter:description" content="neo146 — минималистичный аварийный шлюз, обеспечивающий доступ к интернет-контенту через SMS и Markdown">
     <meta name="twitter:image" content="https://neo146.net/logo.png">
     <meta name="twitter:url" content="https://neo146.net">
     
-    <meta property="og:title" content="neo146 - connect like it's 1984">
-    <meta property="og:description" content="neo146 - A minimal emergency gateway service providing SMS and Markdown access to internet content">
+    <meta property="og:title" content="neo146 — подключайся как в 1984">
+    <meta property="og:description" content="neo146 — минималистичный аварийный шлюз, обеспечивающий доступ к интернет-контенту через SMS и Markdown">
     <meta property="og:image" content="https://neo146.net/logo.png">
     <meta property="og:url" content="https://neo146.net">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="neo146">
     
-    <meta name="description" content="neo146 - A minimal emergency gateway service providing SMS and Markdown access to internet content">
+    <meta name="description" content="neo146 — минималистичный аварийный шлюз, обеспечивающий доступ к интернет-контенту через SMS и Markdown">
     <meta name="keywords" content="neo146, dialup, dial-up, gateway, sms, markdown, internet, content, emergency, service, free software, open source, social, media, communication, technology, freedom, privacy, security">
     <meta name="author" content="ooguz">
     <meta name="robots" content="index, follow">
@@ -83,107 +83,97 @@
 
 <body>
     <header role="banner">
-        <h1>neo146 - connect like it's 1984</h1>
-        <p><em>A plain text version of this page is available at <a href="/index.txt">/index.txt</a></em></p>
+        <h1>neo146 — подключайся как в 1984</h1>
+        <p><em>Текстовая версия этой страницы доступна по адресу <a href="/index.txt">/index.txt</a></em></p>
     </header>
 
     <main role="main">
         <article>
             <section aria-labelledby="about">
-                <h2 id="about">About</h2>
-                <p><strong>neo146</strong> provides a minimal (and experimental!) information gateway that serves as an emergency
-                    network connection method inspired by dial-up, allowing you to access content via certain protocols. The current
-                    implementations are HTTP-SMS gateway and HTTP-Markdown gateway.</p>
+                <h2 id="about">О проекте</h2>
+                <p><strong>neo146</strong> предоставляет минималистичный (и экспериментальный!) информационный шлюз, вдохновленный технологией dial-up, который служит методом аварийного подключения к сети и позволяет получать доступ к контенту через определенные протоколы. Текущие реализации включают HTTP-SMS шлюз и HTTP-Markdown шлюз.</p>
 
-                <p>The name <strong>"neo146"</strong> comes from the Turkish historic public dial-up service, which operated on dial
-                    number 146. This project is created within a few days to support the protesters during the 19 March 2025
-                    uprising in Turkey, following the arrest of the mayor of Istanbul, Ekrem Imamoglu who is the opposition's
-                    presidential candidate.</p>
+                <p>Название <strong>«neo146»</strong> происходит от исторической турецкой общественной службы dial-up, работавшей по номеру 146. Этот проект был создан за несколько дней для поддержки протестующих во время событий 19 марта 2025 года в Турции после ареста мэра Стамбула Экрема Имамоглу, кандидата в президенты от оппозиции.</p>
 
-                <p>The service is free, but running it costs about 20 EUR per month, and also 5-20 cents per message for the SMS
-                    gateway; please use responsibly. For supporting the service and a better experience, please consider donating
-                    and subscribing.</p>
+                <p>Сервис бесплатен, но его содержание обходится примерно в 20 евро в месяц, а каждое сообщение в SMS-шлюзе стоит от 5 до 20 центов; пожалуйста, используйте его ответственно. Чтобы поддержать сервис и улучшить качество обслуживания, пожалуйста, рассмотрите возможность пожертвования или подписки.</p>
 
-                <p>SMS responses are base64 encoded for using less SMS credits. Multiple messages are used to send longer responses,
-                    the sequence of messages is indicated in the response as <code>GW&lt;number&gt;|</code> prefix.</p>
+                <p>SMS-ответы кодируются в base64 для экономии средств. Для длинных ответов используется несколько сообщений, последовательность которых обозначается префиксом <code>GW&lt;номер&gt;|</code>.</p>
 
-                <p>HTTP responses are not encoded by default, but can be requested with <code>b64=true</code> parameter.</p>
+                <p>HTTP-ответы по умолчанию не кодируются, но их можно запросить с параметром <code>b64=true</code>.</p>
 
-                <figure class="terminal" aria-label="Contact phone number">
+                <figure class="terminal" aria-label="Контактный номер телефона">
                     <pre>+-------------------+
 | +90 850 242 0 146 |
 +-------------------+</pre>
-                    <figcaption>Phone number for SMS gateway</figcaption>
+                    <figcaption>Номер телефона для SMS-шлюза</figcaption>
                 </figure>
             </section>
 
             <section aria-labelledby="sms-commands">
-                <h2 id="sms-commands">Available SMS Commands</h2>
+                <h2 id="sms-commands">Доступные SMS-команды</h2>
                 <ul>
-                    <li><code>URL (https://...)</code> - Fetch and convert any webpage to Markdown format</li>
-                    <li><code>twitter user &lt;username&gt;</code> - Get the last 5 tweets from a Twitter user</li>
-                    <li><code>websearch &lt;query&gt;</code> - Search the web using DuckDuckGo</li>
-                    <li><code>wiki &lt;2charlangcode&gt; &lt;query&gt;</code> - Get Wikipedia article summary</li>
-                    <li><code>weather &lt;location&gt;</code> - Get weather forecast for a location</li>
+                    <li><code>URL (https://...)</code> — Загрузить и преобразовать любую веб-страницу в формат Markdown</li>
+                    <li><code>twitter user &lt;username&gt;</code> — Получить последние 5 твитов пользователя Twitter</li>
+                    <li><code>websearch &lt;query&gt;</code> — Поиск в интернете через DuckDuckGo</li>
+                    <li><code>wiki &lt;2charlangcode&gt; &lt;query&gt;</code> — Получить краткое содержание статьи в Википедии</li>
+                    <li><code>weather &lt;location&gt;</code> — Получить прогноз погоды для указанного места</li>
                 </ul>
             </section>
 
             <section aria-labelledby="http-endpoints">
-                <h2 id="http-endpoints">HTTP Endpoints</h2>
+                <h2 id="http-endpoints">Эндпоинты HTTP</h2>
                 <ul>
-                    <li><code>/uri2md?uri=&lt;uri&gt;[&amp;b64=true]</code> - Convert URI to Markdown</li>
-                    <li><code>/twitter?user=&lt;user&gt;[&amp;b64=true]</code> - Get last 5 tweets of a user</li>
-                    <li><code>/ddg?q=&lt;query&gt;[&amp;b64=true]</code> - Search the web via DuckDuckGo</li>
-                    <li><code>/wiki?lang=&lt;2charlangcode&gt;&amp;q=&lt;query&gt;[&amp;b64=true]</code> - Get Wikipedia article
-                        summary</li>
-                    <li><code>/weather?loc=&lt;location&gt;</code> - Get weather forecast</li>
+                    <li><code>/uri2md?uri=&lt;uri&gt;[&amp;b64=true]</code> — Преобразовать URI в Markdown</li>
+                    <li><code>/twitter?user=&lt;user&gt;[&amp;b64=true]</code> — Получить последние 5 твитов пользователя</li>
+                    <li><code>/ddg?q=&lt;query&gt;[&amp;b64=true]</code> — Поиск в интернете через DuckDuckGo</li>
+                    <li><code>/wiki?lang=&lt;2charlangcode&gt;&amp;q=&lt;query&gt;[&amp;b64=true]</code> — Получить краткое содержание статьи в Википедии</li>
+                    <li><code>/weather?loc=&lt;location&gt;</code> — Получить прогноз погоды</li>
                 </ul>
             </section>
 
             <hr>
 
             <section aria-labelledby="roadmap">
-                <h2 id="roadmap">Roadmap</h2>
+                <h2 id="roadmap">План развития</h2>
                 <ul>
-                    <li><s>Add Wikipedia support</s> (done!)</li>
-                    <li><s>Add weather data</s> (done!)</li>
-                    <li>Android app and browser (in progress)</li>
-                    <li>Build up a portal and put actual content frequently similar to old ISPs</li>
-                    <li>Providing a real public dial-up service for emergency use</li>
-                    <li>Bell 202-or-similar AFSK voice modem support</li>
-                    <li>LoRaWAN support</li>
-                    <li>APRS and HF-APRS mediums</li>
-                    <li>Transmitting pictures through neo146 via SSTV</li>
-                    <li>Satellite Internet to circumvent censorships and infrastructure blocks</li>
-                    <li>Any suggestions from you!</li>
+                    <li><s>Добавить поддержку Википедии</s> (готово!)</li>
+                    <li><s>Добавить данные о погоде</s> (готово!)</li>
+                    <li>Приложение и браузер для Android (в разработке)</li>
+                    <li>Создать портал и регулярно размещать актуальный контент, как у старых провайдеров</li>
+                    <li>Предоставление настоящей общедоступной службы dial-up для экстренного использования</li>
+                    <li>Поддержка голосовых модемов Bell 202 или аналогичных с AFSK</li>
+                    <li>Поддержка LoRaWAN</li>
+                    <li>Среды APRS и HF-APRS</li>
+                    <li>Передача изображений через neo146 с помощью SSTV</li>
+                    <li>Спутниковый интернет для обхода цензуры и блокировок инфраструктуры</li>
+                    <li>Любые ваши предложения!</li>
                 </ul>
             </section>
 
             <section aria-labelledby="usage-info">
-                <h2 id="usage-info">Usage Information</h2>
+                <h2 id="usage-info">Информация об использовании</h2>
                 
                 <div aria-labelledby="rate-limits">
-                    <h3 id="rate-limits">Rate Limits</h3>
+                    <h3 id="rate-limits">Лимиты запросов</h3>
                     <ul>
-                        <li>5 messages per hour per phone number</li>
-                        <li>Subscribe to support the service and get 20 messages/hour per phone number</li>
+                        <li>5 сообщений в час на один номер телефона</li>
+                        <li>Подпишитесь, чтобы поддержать сервис и получить 20 сообщений в час на один номер телефона</li>
                     </ul>
                 </div>
                 
                 <div aria-labelledby="subscription">
-                    <h3 id="subscription">Subscription</h3>
-                    <p>Get higher rate limits by subscribing via: <a
+                    <h3 id="subscription">Подписка</h3>
+                    <p>Получите более высокие лимиты, подписавшись через: <a
                             href="https://buymeacoffee.com/ooguz">https://buymeacoffee.com/ooguz</a></p>
-                    <p>After subscribing, text <code>subscribe &lt;your-email&gt;</code> to link your phone number</p>
-                    <p>All your contribution will be used to maintain the service, rest will be donated to Free Software Association in
-                        Turkey (Özgür Yazılım Derneği) <a href="https://oyd.org.tr">https://oyd.org.tr</a></p>
+                    <p>После подписки отправьте SMS с текстом <code>subscribe &lt;ваш-email&gt;</code>, чтобы привязать свой номер телефона</p>
+                    <p>Все ваши взносы будут использованы для поддержки работы сервиса, остаток будет передан в Ассоциацию свободного программного обеспечения Турции (Özgür Yazılım Derneği) <a href="https://oyd.org.tr">https://oyd.org.tr</a></p>
                 </div>
             </section>
 
             <section aria-labelledby="donations">
-                <h2 id="donations">Donations</h2>
+                <h2 id="donations">Пожертвования</h2>
                 <div>
-                    <h3>Monetary donations</h3>
+                    <h3>Денежные пожертвования</h3>
                     <ul>
                         <li><a href="https://buymeacoffee.com/ooguz">Buy Me a Coffee</a></li>
                         <li><a href="https://paypal.me/ozcanoguz">PayPal</a></li>
@@ -191,67 +181,66 @@
                             <input type="hidden" name="cmd" value="_s-xclick" />
                             <input type="hidden" name="hosted_button_id" value="96CNFA8KVT82Y" />
                             <input type="hidden" name="currency_code" value="USD" />
-                            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_subscribe_SM.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Subscribe" />
+                            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_subscribe_SM.gif" border="0" name="submit" title="PayPal — более безопасный и простой способ оплаты в интернете!" alt="Подписаться" />
                           </form></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h3>Hardware and other donations needed</h3>
-                    <p>(please email us)</p>
+                    <h3>Необходимые аппаратные и другие пожертвования</h3>
+                    <p>(пожалуйста, напишите нам на почту)</p>
                     <ul>
-                        <li>Satellite hardware (VSAT, Starlink, Viasat etc.)</li>
-                        <li>Dial-up modems or telephones (DTMF)</li>
-                        <li>LoRa and LoRaWAN devices</li>
-                        <li>Amateur radio hardware: Radios, antennas, Signalink(-like) devices</li>
-                        <li>VoIP numbers, bulk SMS subscriptions or credits</li>
-                        <li>Servers</li>
-                        <li>Any service credits useful for running the service</li>
+                        <li>Спутниковое оборудование (VSAT, Starlink, Viasat и т. д.)</li>
+                        <li>Модемы dial-up или телефоны (DTMF)</li>
+                        <li>Устройства LoRa и LoRaWAN</li>
+                        <li>Оборудование для радиолюбителей: радиостанции, антенны, устройства типа Signalink</li>
+                        <li>Номера VoIP, подписки на массовые SMS или кредиты</li>
+                        <li>Серверы</li>
+                        <li>Любые кредиты сервисов, полезные для работы проекта</li>
                     </ul>
                 </div>
             </section>
 
             <section aria-labelledby="support">
-                <h2 id="support">Support and Contact</h2>
+                <h2 id="support">Поддержка и контакты</h2>
                 <ul>
-                    <li>Email: neo146 [at] riseup [dot] net (preferred)</li>
+                    <li>Email: neo146 [at] riseup [dot] net (предпочтительно)</li>
                     <li>Twitter: <a href="https://twitter.com/ooguz">@ooguz</a></li>
-                    <li>Mailing list: <a href="https://lists.riseup.net/www/subscribe/neo146-users">neo146-users</a></li>
-                    <li>Follow us on Twitter: <a href="https://twitter.com/neo146net">@neo146net</a></li>
-                    <li>Follow us on Mastodon: <a rel="me" href="https://chaos.social/@neo146">@neo146@chaos.social</a></li>
-                    <li>Telegram Channel: <a href="https://t.me/neo146net">https://t.me/neo146net</a></li>
+                    <li>Список рассылки: <a href="https://lists.riseup.net/www/subscribe/neo146-users">neo146-users</a></li>
+                    <li>Подписывайтесь на нас в Twitter: <a href="https://twitter.com/neo146net">@neo146net</a></li>
+                    <li>Подписывайтесь на нас в Mastodon: <a rel="me" href="https://chaos.social/@neo146">@neo146@chaos.social</a></li>
+                    <li>Telegram-канал: <a href="https://t.me/neo146net">https://t.me/neo146net</a></li>
                 </ul>
             </section>
 
             <section aria-labelledby="thanks">
-                <h2 id="thanks">Thanks</h2>
+                <h2 id="thanks">Благодарности</h2>
                 <ul>
-                    <li><a href="https://wttr.in">wttr.in</a> - weather data</li>
-                    <li><a href="https://lite.duckduckgo.com/lite">DuckDuckGo Lite</a> - search engine</li>
-                    <li><a href="https://github.com/macsplit/urltomarkdown">urltomarkdown</a> - markdown conversion</li>
-                    <li><a href="https://github.com/zedeus/nitter">Nitter project</a> - Twitter API</li>
-                    <li><a href="https://oyd.org.tr">Özgür Yazılım Derneği</a> - support</li>
+                    <li><a href="https://wttr.in">wttr.in</a> — данные о погоде</li>
+                    <li><a href="https://lite.duckduckgo.com/lite">DuckDuckGo Lite</a> — поисковая система</li>
+                    <li><a href="https://github.com/macsplit/urltomarkdown">urltomarkdown</a> — преобразование в markdown</li>
+                    <li><a href="https://github.com/zedeus/nitter">проект Nitter</a> — Twitter API</li>
+                    <li><a href="https://oyd.org.tr">Özgür Yazılım Derneği</a> — поддержка</li>
                 </ul>
             </section>
         </article>
     </main>
 
     <footer role="contentinfo">
-        <p>This gateway is free software, licensed under GNU AGPL v3 or later. <a
-                href="https://github.com/ooguz/neo146">Source code</a></p>
+        <p>Этот шлюз является свободным программным обеспечением, лицензированным под GNU AGPL v3 или более поздней версии. <a
+                href="https://github.com/ooguz/neo146">Исходный код</a></p>
 
         <hr>
 
         <section aria-labelledby="warning">
-            <h2 id="warning">Warning</h2>
+            <h2 id="warning">Предупреждение</h2>
             <ul>
-                <li>This service is provided as-is, without any warranty. Use at your own risk.</li>
-                <li>The service is not responsible for any content accessed via the gateway.</li>
-                <li>SMS messages are not encrypted — do not use for sensitive content. Your messages may be read by the provider
-                    or government.</li>
-                <li>This is a personal, non-commercial project. Subscriptions are for support, not business.</li>
-                <li>Please do not abuse the service by sending spam or malicious content.</li>
-                <li>The service is not affiliated with any organization. It is a personal project.</li>
+                <li>Этот сервис предоставляется «как есть», без каких-либо гарантий. Используйте на свой страх и риск.</li>
+                <li>Сервис не несет ответственности за любой контент, полученный через шлюз.</li>
+                <li>SMS-сообщения не шифруются — не используйте их для передачи конфиденциальной информации. Ваши сообщения могут быть прочитаны провайдером или правительством.</li>
+                <li>Это личный некоммерческий проект. Подписки предназначены для поддержки, а не для ведения бизнеса.</li>
+                <li>Пожалуйста, не злоупотребляйте сервисом, отправляя спам или вредоносный контент.</li>
+                <li>Сервис не связан ни с какой организацией. Это личный проект.</li>
             </ul>
         </section>
     </footer>

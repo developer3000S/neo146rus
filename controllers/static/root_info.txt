@@ -1,128 +1,132 @@
-neo146 - connect like it's 1984
-===============================
+neo146 — подключайся как в 1984-м
+=================================
 
-neo146 provides a minimal (and experimental!) information gateway that serves
-as an emergency network connection method inspired by dial-up, allowing you to
-access content via certain protocols. The current implementations are HTTP-SMS
-gateway and HTTP-Markdown gateway.
+neo146 предоставляет минималистичный (и экспериментальный!) информационный шлюз,
+который служит методом экстренного сетевого подключения, вдохновленным dial-up,
+позволяя вам получать доступ к контенту через определенные протоколы. Текущие
+реализации — это шлюз HTTP-SMS и шлюз HTTP-Markdown.
 
-The name "neo146" comes from the Turkish historic public dial-up service, which
-operated on dial number 146. This project is created within a few days to 
-support the protesters during the 19 March 2025 uprising in Turkey, following 
-the arrest of the mayor of Istanbul, Ekrem Imamoglu who is the opposition's 
-presidental candidate. 
+Название «neo146» происходит от исторической турецкой общественной службы
+dial-up, которая работала по номеру 146. Этот проект создан за несколько дней
+для поддержки протестующих во время восстания 19 марта 2025 года в Турции,
+последовавшего за арестом мэра Стамбула Экрема Имамоглу, кандидата в президенты
+от оппозиции.
 
-The service is free, but running it costs about 20 EUR per month, and also 5-20
-cents per message for the SMS gateway; please use responsibly. For supporting 
-the service and a better experience, please consider donating and subscribing.
+Сервис бесплатен, но его работа обходится примерно в 20 евро в месяц, а также
+от 5 до 20 центов за сообщение для SMS-шлюза; пожалуйста, используйте его
+ответственно. Для поддержки сервиса и более комфортной работы, пожалуйста,
+рассмотрите возможность пожертвования и подписки.
 
-SMS responses are base64 encoded for using less SMS credits. Multiple messages
-are used to send longer responses, the sequence of messages is indicated in the
-response as "GW<number>|" prefix.
+SMS-ответы кодируются в base64 для экономии SMS-кредитов. Для отправки длинных
+ответов используется несколько сообщений, последовательность сообщений
+указывается в ответе префиксом «GW<номер>|».
 
-HTTP responses are not encoded by default, but can be requested with b64=true
-parameter.
+HTTP-ответы по умолчанию не кодируются, но могут быть запрошены с параметром
+b64=true.
 
 +-------------------+
 | +90 850 242 0 146 |
 +-------------------+
 
-Available SMS Commands:
-- URL (https://...) - Fetch and convert any webpage to Markdown format
-- "twitter user <username>" - Get the last 5 tweets from a Twitter user
-- "websearch <query>" - Search the web using DuckDuckGo
-- "wiki <2charlangcode> <query>" - Get Wikipedia article summary
-- "weather <location>" - Get weather forecast for a location
+Доступные SMS-команды:
+- URL (https://...) — Получить и преобразовать любую веб-страницу в формат Markdown
+- "twitter user <имя_пользователя>" — Получить последние 5 твитов пользователя Twitter
+- "websearch <запрос>" — Поиск в Интернете с помощью DuckDuckGo
+- "wiki <код_языка_2_символа> <запрос>" — Получить краткое содержание статьи Википедии
+- "weather <местоположение>" — Получить прогноз погоды для местности
 
-HTTP Endpoints:
-- /uri2md?uri=<uri>[&b64=true] - Convert URI to Markdown
-- /twitter?user=<user>[&b64=true] - Get last 5 tweets of a user
-- /ddg?q=<query>[&b64=true] - Search the web via DuckDuckGo
-- /wiki?lang=<2charlangcode>&q=<query>[&b64=true] - Get Wikipedia article summ.
-- /weather?loc=<location> - Get weather forecast
+HTTP-эндпоинты:
+- /uri2md?uri=<uri>[&b64=true] — Преобразовать URI в Markdown
+- /twitter?user=<user>[&b64=true] — Получить последние 5 твитов пользователя
+- /ddg?q=<query>[&b64=true] — Поиск в Интернете через DuckDuckGo
+- /wiki?lang=<код_языка_2_символа>&q=<запрос>[&b64=true] — Краткая справка Википедии
+- /weather?loc=<location> — Получить прогноз погоды
 
 ---------------
 
-Roadmap:
-- ~Add Wikipedia support~ (done!)
-- ~Add weather data~ (done!)
-- Android app and browser (in progress)
-- Build up a portal and put actual content frequently similar to old ISPs
-- Providing a real public dial-up service for emergency use
-- Bell 202-or-similar AFSK voice modem support
-- LoRaWAN support
-- APRS and HF-APRS mediums
-- Transmitting pictures through neo146 via SSTV
-- Satellite Internet to circumvent censorships and infrastructure blocks
-- Any suggestions from you! 
+План развития:
+- ~Добавить поддержку Википедии~ (готово!)
+- ~Добавить данные о погоде~ (готово!)
+- Приложение для Android и браузер (в процессе)
+- Создать портал и регулярно размещать актуальный контент, как у старых провайдеров
+- Предоставление реальной общественной службы dial-up для экстренных случаев
+- Поддержка голосовых модемов Bell 202 или аналогичных с модуляцией AFSK
+- Поддержка LoRaWAN
+- Среды APRS и HF-APRS
+- Передача изображений через neo146 с помощью SSTV
+- Спутниковый интернет для обхода цензуры и блокировок инфраструктуры
+- Любые ваши предложения!
 
-Rate Limits:
-- 5 messages per hour per phone number
-- Subscribe to support the service and get 20 messages/hour per phone number
+Лимиты:
+- 5 сообщений в час на один номер телефона
+- Подпишитесь, чтобы поддержать сервис и получать 20 сообщений в час на номер
 
-Subscription:
-- Get higher rate limits by subscribing via: <https://buymeacoffee.com/ooguz>
-- After subscribing, text "subscribe <your-email>" to link your phone number
-- All your contribution will be used to maintain the service, rest will be 
-donated to Free Software Association in Turkey (Özgür Yazılım Derneği) 
+Подписка:
+- Получите более высокие лимиты, подписавшись через: <https://buymeacoffee.com/ooguz>
+- После подписки отправьте SMS «subscribe <ваш-email>», чтобы привязать ваш номер
+- Все ваши взносы будут использованы для поддержания сервиса, остальное будет
+передано в Ассоциацию свободного программного обеспечения Турции (Özgür Yazılım Derneği)
 <https://oyd.org.tr>
-- Running this service costs about 20 EUR per month, and also ~3 cents/message
-for the SMS gateway. For a better experience and support the service, please 
-consider subscribing.
+- Работа этого сервиса стоит около 20 евро в месяц, а также ~3 цента за сообщение
+для SMS-шлюза. Для более удобной работы и поддержки сервиса, пожалуйста,
+рассмотрите возможность подписки.
 
-Donations:
-- Money donations can be made via Buy me a coffee or PayPal, if you want to 
-donate crypto or cash please contact.
+Пожертвования:
+- Денежные пожертвования можно сделать через Buy me a coffee или PayPal, если вы
+хотите пожертвовать криптовалюту или наличные, пожалуйста, свяжитесь с нами.
 	+ <https://buymeacoffee.com/ooguz>
 	+ <https://paypal.me/ozcanoguz>
 <https://paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=96CNFA8KVT82Y>
 
-- Hardware and other donations are also needed (please send us an e-mail):
-	+ Satellite hardware (VSAT, Starlink, Viasat etc.)
-	+ Dial-up modems or telephones (DTMF)
-	+ LoRa and LoRaWAN devices
-	+ Amateur radio hardware: Radios, antennas or Signalink(-like) devices
-	+ Any kind of VoIP number, bulk SMS subscriptions or credits etc.
-	+ Servers
-	+ Any kind of service credits that might be useful to run this service
+- Также необходимы пожертвования оборудования и прочего (напишите нам e-mail):
+	+ Спутниковое оборудование (VSAT, Starlink, Viasat и т. д.)
+	+ Dial-up модемы или телефоны (DTMF)
+	+ Устройства LoRa и LoRaWAN
+	+ Радиолюбительское оборудование: трансиверы, антенны или устройства Signalink (и аналоги)
+	+ Любые VoIP-номера, подписки на массовые SMS или кредиты и т. д.
+	+ Серверы
+	+ Любые кредиты на услуги, которые могут быть полезны для работы этого сервиса
 
-Support and contact:
-- For more information or support, neo146 {at} riseup {dot} net
-- E-mail is preferred for requests, but you can also contact via Twitter @ooguz
-- Subscribe to our neo146-users mailing list to get updates and support:
+Поддержка и контакты:
+- Дополнительная информация или поддержка: neo146 {at} riseup {dot} net
+- Электронная почта предпочтительна для запросов, но вы также можете связаться через Twitter @ooguz
+- Подпишитесь на нашу рассылку neo146-users для обновлений и поддержки:
 <https://lists.riseup.net/www/subscribe/neo146-users>
-- Follow our Twitter account: @neo146net
-- Follow our Mastodon account: @neo146@chaos.social
-- Telegram channel for updates: <https://t.me/neo146net>
+- Наш Twitter: @neo146net
+- Наш Mastodon: @neo146@chaos.social
+- Telegram-канал для обновлений: <https://t.me/neo146net>
 
 
-Thanks:
-- wttr.in for the weather data - <https://wttr.in>
-- duckduckgo lite for the search engine - <https://lite.duckduckgo.com/lite>
-- urltomarkdown for the md conversion - <github.com/macsplit/urltomarkdown>
-- nitter project for the Twitter API - <https://github.com/zedeus/nitter>
-- Özgür Yazılım Derneği for the support - <https://oyd.org.tr>
+Благодарности:
+- wttr.in за данные о погоде — <https://wttr.in>
+- duckduckgo lite за поисковую систему — <https://lite.duckduckgo.com/lite>
+- urltomarkdown за конвертацию в md — <github.com/macsplit/urltomarkdown>
+- проект nitter за Twitter API — <https://github.com/zedeus/nitter>
+- Özgür Yazılım Derneği за поддержку — <https://oyd.org.tr>
 
 
-This gateway is free software, licensed under GNU AGPL v3 or later. 
-Source code is available at:
+Этот шлюз является свободным программным обеспечением, лицензированным под
+GNU AGPL v3 или более поздней версии. Исходный код доступен по адресу:
 https://github.com/ooguz/neo146
 
 --------------------------------
 
-Warning:
-- This service is provided as-is, without any warranty. Use at your own risk.
-- The service is not responsible for any content accessed via the gateway.
-- Please be aware that the SMS messages are not encrypted, so please do not use
-  it for sensitive content. The provider and government may read your messages.
-- The service is not affiliated with any organization. It is a personal project.
-- This is not a commercial service or ISP. It is a free service provided by an
-  individual. Subscribing is not meant to be a commercial transaction, but a
-  way to support the service. Please do not abuse the service by sending spam
-  or other malicious content.
-- The service is not responsible for any content accessed via the gateway.
-- Please be aware that the SMS messages are not encrypted, so please do not use
-  it for sensitive content. The provider and government may read your messages.
-- The service is not affiliated with any organization. It is a personal project.
-- This is not a commercial service or ISP. It is a free service provided by an
-  individual.
+Предупреждение:
+- Этот сервис предоставляется «как есть», без каких-либо гарантий. Используйте на
+  свой страх и риск.
+- Сервис не несет ответственности за любой контент, доступ к которому осуществляется
+  через шлюз.
+- Пожалуйста, имейте в виду, что SMS-сообщения не шифруются, поэтому не используйте
+  их для конфиденциальной информации. Провайдер и правительство могут читать ваши сообщения.
+- Сервис не связан ни с какой организацией. Это личный проект.
+- Это не коммерческий сервис и не интернет-провайдер. Это бесплатная услуга,
+  предоставляемая частным лицом. Подписка не является коммерческой сделкой, а
+  способом поддержки сервиса. Пожалуйста, не злоупотребляйте сервисом, отправляя
+  спам или другой вредоносный контент.
+- Сервис не несет ответственности за любой контент, доступ к которому осуществляется
+  через шлюз.
+- Пожалуйста, имейте в виду, что SMS-сообщения не шифруются, поэтому не используйте
+  их для конфиденциальной информации. Провайдер и правительство могут читать ваши сообщения.
+- Сервис не связан ни с какой организацией. Это личный проект.
+- Это не коммерческий сервис и не интернет-провайдер. Это бесплатная услуга,
+  предоставляемая частным лицом.

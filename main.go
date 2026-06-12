@@ -33,14 +33,16 @@ func main() {
 	// Initialize config
 	cfg, err := config.NewConfig()
 	if err != nil {
-		fmt.Printf("Error initializing config: %v\n", err)
+		fmt.Printf("Ошибка инициализации конфигурации: %v
+", err)
 		os.Exit(1)
 	}
 
 	// Initialize database
 	db, err := database.InitDB()
 	if err != nil {
-		fmt.Printf("Error initializing database: %v\n", err)
+		fmt.Printf("Ошибка инициализации базы данных: %v
+", err)
 		os.Exit(1)
 	}
 	defer db.Close()
@@ -91,13 +93,13 @@ func main() {
 	// Initialize Telegram bot controller
 	telegramController, err := controllers.NewTelegramController(smsService, subscriptionService)
 	if err != nil {
-		log.Printf("Error initializing Telegram bot: %v", err)
+		log.Printf("Ошибка инициализации Telegram-бота: %v", err)
 	}
 
 	// Create Fiber app
 	app := fiber.New(fiber.Config{
-		AppName:      "neo146 - infogate",
-		ServerHeader: "neo146-infogate",
+		AppName:      "neo146 - инфогейт",
+		ServerHeader: "neo146-инфогейт",
 	})
 
 	// Middleware
@@ -127,7 +129,7 @@ func main() {
 		for {
 			err := telegramController.StartBot()
 			if err != nil {
-				log.Printf("Failed to start Telegram bot: %v", err)
+				log.Printf("Не удалось запустить Telegram-бота: %v", err)
 				time.Sleep(5 * time.Second) // Wait before retrying
 				continue
 			}
@@ -141,14 +143,14 @@ func main() {
 
 	go func() {
 		<-quit
-		log.Println("Shutting down server...")
+		log.Println("Завершение работы сервера...")
 		telegramController.Cleanup()
 		app.Shutdown()
 	}()
 
 	// Start server
 	if err := app.Listen(":8080"); err != nil {
-		log.Fatalf("Failed to start server: %v", err)
+		log.Fatalf("Не удалось запустить сервер: %v", err)
 	}
 }
 
@@ -159,7 +161,7 @@ func startPrivacyCleanupJob(db *database.DB) {
 
 	for range ticker.C {
 		if err := db.PurgeOldMessageData(); err != nil {
-			log.Printf("Error purging old message data: %v", err)
+			log.Printf("Ошибка очистки старых данных сообщений: %v", err)
 		}
 	}
 }
